@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: event
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pts?currentSchema=event
+    username: postgres
+    password:
+    driver-class-name: org.postgresql.Driver
+
+  modulith:
+    events:
+      jdbc:
+        schema-initialization:
+          enabled: true
+    republish-outstanding-events-on-restart: true
+
+  sql:
+    init:
+      schema-locations: classpath:schema.sql
+
+
